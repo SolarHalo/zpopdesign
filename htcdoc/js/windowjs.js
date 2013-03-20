@@ -1,0 +1,61 @@
+function addFragmentChangeEvent(callback) {
+	var source = document.URL;
+	var url = source.split("#")[0];
+	if (window.location.hash) {
+		var base_hash = "#____base____hash____";//改变hash，使得页面初始化的时候触发一下事件函数。 
+		window.location = url + base_hash;
+	}
+	var prevHash = window.location.hash;
+	window.setInterval(function() {
+		if (window.location.hash != prevHash) {
+			prevHash = window.location.hash;
+			callback(prevHash);
+		}
+	}, 100);
+	if (window.location.hash) {
+		window.location = source;
+	}
+}
+
+function windowShow(hash){
+	if($("#cwindow").is(":hidden")){
+		$("#cwindow").css({
+			'display': 'block',
+			'left': $('body').width()/2 - 250,
+			'top': $('body').height()/2 - 100
+		});
+		$("#cwindow").animate({
+			'width': 850,
+			'height': 500,
+			'opacity': 1,
+			'left': $('body').width()/2 - 425,
+			'top': $('body').height()/2 - 250
+		}, 600);
+	}
+	
+	$.ajax({
+		'url': '/ajaxopt.php',
+		'type': 'POST',
+		'data': {'path': window.location.pathname, 'hash': hash},
+		'success': function(data){
+			$("#cwindow .contentC").html(data);
+		}
+	})
+}
+
+function closeWindow(){
+	$("#cwindow").animate({
+		'width': 500,
+		'height': 200,
+		'opacity': 0,
+		'left': $('body').width()/2 - 250,
+		'top': $('body').height()/2 - 100
+	}, 600, function(){
+		$("#cwindow").css("display", "none");
+	});
+}
+
+
+$(document).ready(function(){
+	addFragmentChangeEvent(windowShow);
+});

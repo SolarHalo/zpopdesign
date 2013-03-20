@@ -1,0 +1,6 @@
+<testData>
+  <text><![CDATA[<P ALIGN="LEFT"><FONT FACE="Arial" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0">This is Example Text</FONT></P>]]></text>
+  <image><![CDATA[config/exampleMedia/moo10.jpg]]></image>
+  <sound><![CDATA[config/exampleMedia/adg3com_chuckedknuckles.mp3]]></sound>
+  <video><![CDATA[config/exampleMedia/ORGANIC.flv]]></video>
+</testData>

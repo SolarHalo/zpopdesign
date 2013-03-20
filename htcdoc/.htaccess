@@ -1,0 +1,5 @@
+﻿RewriteEngine  on
+RewriteBase /
+
+RewriteRule ^works/figure/(.+)/$ figure.php?type=$1
+RewriteRule ^works/figure/(.+)$ figure.php?type=$1
