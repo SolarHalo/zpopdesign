@@ -1,5 +1,27 @@
 ﻿RewriteEngine  on
 RewriteBase /
 
+RewriteRule ^about/$ who.php
+RewriteRule ^about$ who.php
+RewriteRule ^about/who/$ who.php
+RewriteRule ^about/who$ who.php
+RewriteRule ^about/team/$ team.php
+RewriteRule ^about/team$ team.php
+RewriteRule ^about/news/$ news.php
+RewriteRule ^about/news$ news.php
+RewriteRule ^about/news/(.+)/$ news.php?new=$1
+RewriteRule ^about/news/(.+)$ news.php?new=$1
+RewriteRule ^works/figure/$ figure.php
+RewriteRule ^works/figure$ figure.php
 RewriteRule ^works/figure/(.+)/$ figure.php?type=$1
 RewriteRule ^works/figure/(.+)$ figure.php?type=$1
+RewriteRule ^works/culture/$ culture.php
+RewriteRule ^works/culture$ culture.php
+RewriteRule ^services/$ service.php
+RewriteRule ^services$ service.php
+RewriteRule ^join/$ join.php
+RewriteRule ^join$ join.php
+RewriteRule ^join/(.+)/(.+)/$ join.php?bumen=$1&zhiwei=$2
+RewriteRule ^join/(.+)/(.+)$ join.php?bumen=$1&zhiwei=$2
+RewriteRule ^contact/$ contact.php
+RewriteRule ^contact$ contact.php

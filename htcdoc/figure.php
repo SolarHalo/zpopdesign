@@ -2,7 +2,10 @@
 include '../configs/load.php';
 include BASE_HOME.'includes/XmlLoader.php';
 
-$type = $_GET['type'];
+$type = "logo";
+if(array_key_exists("type", $_GET)){
+	$type = $_GET['type'];
+}
 
 $xml = loadXmlfile("case1.xml");
 $typeResult = $xml->xpath("/case/".$type);
@@ -21,7 +24,8 @@ if($typeResult){
 	header('HTTP/1.1 404 Not Found');
 	header("status: 404 Not Found");
 }
-
-
+$smarty->assign("type", $type);
+$smarty->assign("mm", "works");
+$smarty->assign("sm", "figure");
 $smarty->display("figure.tpl");
 ?>

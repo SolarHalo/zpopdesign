@@ -1,28 +1,24 @@
 {{include 'header.tpl'}}
 {{include 'nav.tpl'}}
 
+
 <div class="right_colum">
             	<div class="r-colum_right">
                     <div class="colum works-nav"  id="works">
-                    	<ul class="works-show_nav">
-                        	<li><a href="{{$urlroot}}works/figure/logo" {{if $type == "logo"}} style="color:red;"{{/if}}>标志/VI</a></li>
-                            <li><a href="{{$urlroot}}works/figure/web" {{if $type == "web"}} style="color:red;"{{/if}}>网站</a></li>
-                            <li><a href="{{$urlroot}}works/figure/print" {{if $type == "print"}} style="color:red;"{{/if}}>印刷品</a></li>
-                            <li><a href="{{$urlroot}}works/figure/publish" {{if $type == "publish"}} style="color:red;"{{/if}}>品牌发布</a></li>
-                        </ul> 
+                    	<h5>企业文化(人心工程)</h5> 
+                        <p>{{$cultureText}}</p>
                         <div class="works-show slides">
-                        {{foreach $banners as $img}}
+                        	{{foreach $banners as $img}}
                         	<img src="{{$urlroot}}{{$img}}" width="400" />
-                        {{/foreach}}
-                        	
+                        	{{/foreach}}
                         </div> 
                         <div class="works-imgshow_list">
-                        {{foreach $vipcs as $vip}}
-                        	<div>
-                            	<a href="#推荐客户/{{$vip.title}}"><img src="{{$urlroot}}{{$vip.thumb}}" /> 
-                                <p>{{$vip.industry}}</p></a>
-                             </div>
-                        {{/foreach}}
+                        	 {{foreach $vipcs as $vip}}
+	                        	<div>
+	                            	<a href="#推荐客户/{{$vip.title}}"><img src="{{$urlroot}}{{$vip.thumb}}" /> 
+	                                <p>{{$vip.industry}}</p></a>
+	                             </div>
+	                        {{/foreach}}
                         </div>
                     </div> 
                     <div class="zhegai" style="height:525px;">&nbsp;<!--用于遮挡竖滚动条--></div> 
@@ -31,9 +27,9 @@
                 	<h3 class="works-show_h">案例分析</h3>
                     <div class="works-show_list"> 
                         <ul>
-                        {{foreach $normcs as $normc}}
-                        	<li><a href="#其他客户/{{$normc.title}}">{{$normc.title}}</a></li> 
-                       {{/foreach}}
+                        	 {{foreach $normcs as $normc}}
+		                        <li><a href="#其他客户/{{$normc.title}}">{{$normc.title}}</a></li> 
+		                     {{/foreach}}
                         </ul>
                     </div>
                     <div class="page"><span style="float:left; width:35px;">&nbsp;</span>
@@ -43,6 +39,7 @@
 				</div> 
             </div> 
 		<!-- container END --> 
+		
 		
 		<div id="cwindow" class="smallLay">
 		</div>
@@ -63,6 +60,5 @@
       });
     });
   </script>
-		
-		
+
 {{include 'footer.tpl'}}

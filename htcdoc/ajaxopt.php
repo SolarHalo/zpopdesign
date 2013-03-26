@@ -7,10 +7,20 @@ $hash = $_POST['hash'];
 
 $path = explode("/", $path);
 $case = $path[2];
-$type = $path[3];
+$xpath = array();
+$xpath[] = "case";
+if(count($path) > 3){
+$xpath[] = $path[3];
+}
+if($case == "figure"){
+	if(count($xpath)==1){
+		$xpath[] = "logo";
+	}
+}
 
 $hash = explode("/", substr($hash, 1));
 $level = $hash[0];
+$xpath[] = $level;
 $custom = $hash[1];
 if ($case == "figure"){
 	$case = "case1.xml";
@@ -22,7 +32,7 @@ if ($case == "figure"){
 }
 
 $xml = loadXmlfile($case);
-$typeResult = $xml->xpath("/case/".$type."/".$level);
+$typeResult = $xml->xpath("/".join("/", $xpath));
 if($typeResult){
 	$customs = parseSXmlCase($typeResult[0]->children());
 	$preC = '';
@@ -35,7 +45,7 @@ if($typeResult){
 			if($k > 0){
 				$preC = $customs[$k -1]['title'];
 			}
-			if($k < $count){
+			if($k < $count-1){
 				$nexC = $customs[$k + 1]['title'];
 			}
 			break;

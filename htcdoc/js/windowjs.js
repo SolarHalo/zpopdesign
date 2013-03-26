@@ -18,6 +18,9 @@ function addFragmentChangeEvent(callback) {
 }
 
 function windowShow(hash){
+	if(!hash){
+		return;
+	}
 	if($("#cwindow").is(":hidden")){
 		$("#cwindow").css({
 			'display': 'block',
@@ -38,18 +41,19 @@ function windowShow(hash){
 		'type': 'POST',
 		'data': {'path': window.location.pathname, 'hash': hash},
 		'success': function(data){
-			$("#cwindow .contentC").html(data);
+			$("#cwindow").html(data);
 		}
 	})
 }
 
 function closeWindow(){
+	console.log($('body').innerWidth()/2 - 250);
 	$("#cwindow").animate({
 		'width': 500,
 		'height': 200,
 		'opacity': 0,
-		'left': $('body').width()/2 - 250,
-		'top': $('body').height()/2 - 100
+		'left': $('body').innerWidth()/2 - 250,
+		'top': $('body').innerHeight()/2 - 100
 	}, 600, function(){
 		$("#cwindow").css("display", "none");
 	});

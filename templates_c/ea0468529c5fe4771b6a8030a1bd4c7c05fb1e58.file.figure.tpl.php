@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-20 16:08:20
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-26 10:54:32
          compiled from "E:\gisrespository\personal\php\php\zpopdesign\templates\figure.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:295595148675a2714f9-39500370%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ea0468529c5fe4771b6a8030a1bd4c7c05fb1e58' => 
     array (
       0 => 'E:\\gisrespository\\personal\\php\\php\\zpopdesign\\templates\\figure.tpl',
-      1 => 1363795609,
+      1 => 1364295266,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'urlroot' => 0,
+    'type' => 0,
     'banners' => 0,
     'img' => 0,
     'vipcs' => 0,
@@ -39,13 +40,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="colum works-nav"  id="works">
                     	<ul class="works-show_nav">
                         	<li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/logo">标志/VI</a></li>
+works/figure/logo" <?php if ($_smarty_tpl->tpl_vars['type']->value=="logo"){?> style="color:red;"<?php }?>>标志/VI</a></li>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/web">网站</a></li>
+works/figure/web" <?php if ($_smarty_tpl->tpl_vars['type']->value=="web"){?> style="color:red;"<?php }?>>网站</a></li>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/print">印刷品</a></li>
+works/figure/print" <?php if ($_smarty_tpl->tpl_vars['type']->value=="print"){?> style="color:red;"<?php }?>>印刷品</a></li>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/publish">品牌发布</a></li>
+works/figure/publish" <?php if ($_smarty_tpl->tpl_vars['type']->value=="publish"){?> style="color:red;"<?php }?>>品牌发布</a></li>
                         </ul> 
                         <div class="works-show slides">
                         <?php  $_smarty_tpl->tpl_vars['img'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['img']->_loop = false;
@@ -101,9 +102,7 @@ $_smarty_tpl->tpl_vars['normc']->_loop = true;
             </div> 
 		<!-- container END --> 
 		
-		<div id="cwindow" class="tWindow">
-			<div class="closeb"><a href="javascript:void(0)" onclick="closeWindow()">X</a></div>
-			<div class="contentC">Content</div>
+		<div id="cwindow" class="smallLay">
 		</div>
 		
 		<script src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
