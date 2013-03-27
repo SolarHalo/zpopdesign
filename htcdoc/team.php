@@ -6,7 +6,7 @@ $xml = loadXmlfile("about.xml");
 
 $imgs = pasreSXml2Array($xml->image->children());
 
-$txt = strval($xml->text);
+$txt = replaceFont(strval($xml->text));
 $smarty->assign("txt", $txt);
 $smarty->assign("images", $imgs);
 $smarty->assign("mm", "about");

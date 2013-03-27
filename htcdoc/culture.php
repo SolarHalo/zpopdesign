@@ -18,6 +18,7 @@ $normalc = $xml->xpath("/case/其他客户");
 $normalc = parseSXmlCase($normalc[0]->children());
 $smarty->assign("normcs", $normalc);
 
+$smarty->assign("type", "");
 $smarty->assign("mm", "works");
 $smarty->assign("sm", "culture");
 $smarty->display("culture.tpl");

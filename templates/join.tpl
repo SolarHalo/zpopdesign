@@ -16,7 +16,7 @@
                         <ul>
                         {{foreach $work as $k=>$w}}
                             <li>
-                                <a href="{{$urlroot}}join/{{$key}}/{{$k|replace:'/':'@'}}" {{if $title == $k}} class="newlist_dq" {{/if}}> 
+                                <a href="{{$urlroot}}join.php?bumen={{$key}}&zhiwei={{$k|replace:'/':'@'}}" {{if $title == $k}} class="newlist_dq" {{/if}}> 
                                    {{$k}}
                                 </a>
                             </li>

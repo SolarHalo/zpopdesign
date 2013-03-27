@@ -37,11 +37,12 @@ function windowShow(hash){
 	}
 	
 	$.ajax({
-		'url': '/ajaxopt.php',
+		'url': 'ajaxopt.php',
 		'type': 'POST',
-		'data': {'path': window.location.pathname, 'hash': hash},
+		'data': {'case': casetype,'type':type, 'hash': hash},
 		'success': function(data){
 			$("#cwindow").html(data);
+			cscroll("#p_up", "#p_down", "#p_content", $("#ttcontent").innerHeight());
 		}
 	})
 }
@@ -62,4 +63,23 @@ function closeWindow(){
 
 $(document).ready(function(){
 	addFragmentChangeEvent(windowShow);
+	
+	$("#smallaythumb").live("mouseenter", function(e){
+		$(this).bind("mousemove", thumbscroll)
+		
+	});
+	$("#smallaythumb").live("mouseleave", function(e){
+		$(this).unbind("mousemove", thumbscroll)
+		
+	});
 });
+
+
+
+function  thumbscroll(e){
+	var x = e.pageY - $("#smallaythumb").offset().top;
+	var h1 = $("#smallaythumb").height();
+	var h2 = $("#thumbcontent").height();
+	$("#thumbcontent").animate({"top": ((x/h1) > 0.5) ? (h1- x/h1*h2) : (0- x/h1*h2)}, { duration: 600, queue: false });
+	console.log(0- x/h1*h2);
+}

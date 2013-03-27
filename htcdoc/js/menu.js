@@ -49,3 +49,43 @@ function initMenu() {
     );
   }
 $(document).ready(function() {initMenu();});
+
+function cscroll(upid, dowid, contentid , height) { 
+
+	
+	//点击次数，此处取该结果集的最大整数
+	var count = Math.ceil($(contentid).height()/height);
+	var i = 0;
+	//往下移动
+	$(dowid).click(function(e){ 
+		     		 
+		$(upid).css("display","block");
+		if(i>=count-1){
+			return false;
+		}else{
+			i++;
+			$(contentid).animate({
+				top: 0-(height)*i	 
+			},600);
+		}
+       
+		
+   });
+	//往上移动
+   $(upid).click(function(e){
+   	
+		 var divtop = $(contentid).offset().top;
+		// alert(divtop);
+		 //alert(i);
+		 if(i<=0){
+			return false;
+		 }else{
+		 	i--;
+			$(contentid).animate({
+				top: 0-height*i
+			},600);
+		 }
+		
+   });
+   
+};  

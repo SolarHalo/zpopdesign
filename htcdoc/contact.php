@@ -6,9 +6,9 @@ $xml = loadXmlfile("contact.xml");
 
 $swfs = pasreSXml2Array($xml->image[0]->children());
 
-$trans = strval($xml->text[0]);
-$address = strval($xml->text[1]); 
-$con = strval($xml->text[2]);
+$trans = replaceFont(strval($xml->text[0]));
+$address = replaceFont(strval($xml->text[1])); 
+$con = replaceFont(strval($xml->text[2]));
 
 $smarty->assign("trans", $trans);
 $smarty->assign("address", $address);

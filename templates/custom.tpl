@@ -1,14 +1,16 @@
 
-        <div class="smallLay-img">
+        <div id="smallaythumb" class="smallLay-img">
+        	<div id="thumbcontent" style=" position:relative;">
             {{foreach $cimgs as $img}}
 			<img alt="" src="{{$urlroot}}{{$img}}">
 			{{/foreach}}
+			</div>
         </div>
         <div class="smallLay-right">
             <h3><!--{{$ctitle}}-->
                 {{$ctitle}}
             </h3> 
-            <div class="text-conten">
+            <div id="ttcontent" class="text-conten">
             	<div id="p_content" >
                    {{$ctext}}
                 </div>

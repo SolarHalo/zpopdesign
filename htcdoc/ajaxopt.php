@@ -2,15 +2,14 @@
 include '../configs/load.php';
 include BASE_HOME.'includes/XmlLoader.php';
 
-$path = $_POST['path'];
+$case = $_POST['case'];
+$type = $_POST['type'];
 $hash = $_POST['hash'];
 
-$path = explode("/", $path);
-$case = $path[2];
 $xpath = array();
 $xpath[] = "case";
-if(count($path) > 3){
-$xpath[] = $path[3];
+if($type){
+	$xpath[] = $type;
 }
 if($case == "figure"){
 	if(count($xpath)==1){

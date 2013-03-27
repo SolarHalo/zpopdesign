@@ -28,9 +28,9 @@ function parseSXmlCase($sxml){
 		}
 		$client['img'] = $img;
 		
-		$client['text'] = strval($node->text);
-		$client['industry'] = strval($node->industry);
-		$client['services'] = strval($node->services);
+		$client['text'] = replaceFont(strval($node->text));
+		$client['industry'] = replaceFont(strval($node->industry));
+		$client['services'] = replaceFont(strval($node->services));
 		
 		$a[] = $client;
 	}
@@ -54,7 +54,7 @@ function parseNews($node){
 		$n['name'] = $name;
 		$n['title'] = xml_attribute($new, 'title');
 		$n['date'] = xml_attribute($new, "date");
-		$n['text'] = strval($new->text);
+		$n['text'] = replaceFont(strval($new->text));
 		$images = array();
 		foreach ($new->image->children() as $img){
 			$images[] = strval($img);
@@ -68,7 +68,7 @@ function parseNews($node){
 function parseService($node){
 	$service = array();
 	foreach ($node->children() as $n=>$s){
-		$service[$n] = strval($s);
+		$service[$n] = replaceFont(strval($s));
 	}
 	return $service;
 }
@@ -79,18 +79,22 @@ function parseJoin($node){
 		if($n == "Welcome"){
 			$we = array();
 			$we['title'] = xml_attribute($no->text, "title");
-			$we['text'] = strval($no->text);
-			$we['sendmail'] = strval($no->sendmail);
+			$we['text'] = replaceFont(strval($no->text));
+			$we['sendmail'] = replaceFont(strval($no->sendmail));
 			$join['welcome'] = $we;
 		}else{
 			$js = array();
 			foreach ($no->children() as $t){
-				$js[xml_attribute($t, 'title')] = strval($t); 
+				$js[xml_attribute($t, 'title')] = replaceFont(strval($t)); 
 			}
 			$join['works'][ xml_attribute($no, "title")] = $js;
 		}
 	}
 	return $join;
+}
+
+function replaceFont($str){
+	return preg_replace("/<\/?(?:FONT|SPAN)[^>]*>/","", $str);
 }
 
 ?>
