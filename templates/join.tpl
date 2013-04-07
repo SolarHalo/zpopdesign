@@ -7,9 +7,10 @@
                          <p><font style="color:#e60013">{{$title}}</font></p>
                          {{$text}}
                          {{$sendmail}}
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
-                </div>
-                <div class="colum_list">
+                 </div>
+               
+ 				     </div>
+ 				      <div class="colum_list">
                     <div class="about_zpopnew_list" id="joinus">
                     {{foreach $works as $key=>$work}}
                     	<span>{{$key}}</span>	
@@ -26,8 +27,6 @@
                      {{/foreach}}
                     </div>
                      
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
-				</div>
             </div> 
 		<!-- container END --> 
 		

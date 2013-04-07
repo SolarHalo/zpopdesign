@@ -38,16 +38,15 @@
                                 </table>
                             </form>
                          </div> 
-                    </div> 
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
+                    </div>  
                 </div>
                 <div class="colum_list">
                     <div class="about_zpopnew_list" id="contanct">
+                    	 <p style=" display:block; padding:9px 0;"></p>
                     	{{$address}}
-                         
+                         <p style=" display:block; padding:53px 0;"></p>
                         {{$contact}}  
-                    </div> 
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
+                    </div>  
 				</div>
             </div> 
 		<!-- container END --> 

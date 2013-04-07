@@ -49,7 +49,7 @@
     $(function() {
       $('.slides').slidesjs({
         width: 400,
-        height: 200,
+        height: 184,
         navigation: false,
         play: {
             active: false,

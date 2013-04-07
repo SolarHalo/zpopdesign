@@ -23,6 +23,6 @@
              <div class="header_title">
 				<p>做太仓中脱颖之粟</p>
              </div> 
-             <img src="{{$urlroot}}images/headerlogo-x.png" width="155" height="20" style="float:left; padding-top:32px;" />
+             <img src="{{$urlroot}}images/headerlogo-x.png" width="155" height="20" style="float:right; padding:32px 15px 0 0;" />
         </div>
         <!-- header END -->

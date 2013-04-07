@@ -6,8 +6,7 @@
                     <div class="colum services"> 
                          <img src="{{$urlroot}}images/services.jpg" /> 
                         {{$text}}
-                    </div> 
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
+                    </div>  
                 </div>
                 <div class="colum_list services_list">
                 	<span class="services-title">

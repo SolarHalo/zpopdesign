@@ -80,6 +80,5 @@ function  thumbscroll(e){
 	var x = e.pageY - $("#smallaythumb").offset().top;
 	var h1 = $("#smallaythumb").height();
 	var h2 = $("#thumbcontent").height();
-	$("#thumbcontent").animate({"top": ((x/h1) > 0.5) ? (h1- x/h1*h2) : (0- x/h1*h2)}, { duration: 600, queue: false });
-	console.log(0- x/h1*h2);
+	$("#thumbcontent").animate({"top": ((x/h1) > 0.5) ? ((h1- x/h1*h2 + h2) < 0 || h1- x/h1*h2 > 0 ? h1-h2: h1- x/h1*h2)  : (0- x/h1*h2 > 0 || h2- x/h1*h2 > 0  ? 0 : 0- x/h1*h2 )}, { duration: 600, queue: false });
 }

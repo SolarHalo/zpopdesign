@@ -40,10 +40,11 @@ $(document).ready(function (){
 		        play: "true" ,
 		        wmode:"transparent"
 		    }; 
-			$("#mapwindow").html("<div id='swfobj'></div>");
+			$("#mapwindow").html("<div style='position:relative; left:0; top:0;'>" +
+					"<div style='position:absolute; left:0px; top: 0px; width:"+w2+"px; height: "+h2+"px;'><div id='swfobj'></div></div>" +
+					"<div id='overflows' style='position:absolute; left:0px; top: 0px; width:"+w2+"px; height: "+h2+"px;'></div></div>");
 			swfobject.embedSWF(swf, "swfobj", w2, h2, "9.0.0", "expressInstall.swf", flashvars, params);
-			div.click(function(){
-				console.log("ddddddddddd");
+			$("#overflows").click(function(){
 				div.animate({
 					'left': p.left,
 					'top': p.top,

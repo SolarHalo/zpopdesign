@@ -1,20 +1,20 @@
 {{include 'header.tpl'}}
 {{include 'nav.tpl'}}
-
+<script src="{{$urlroot}}js/windowjs.js" type="text/javascript"></script>
 <div class="right_colum">
             	<div class="r-colum_right">
-                    <div class="colum about_zpopnew">
+                    <div id="smallaythumb" class="colum about_zpopnew" >
+                    	<div id="thumbcontent" style=" position:relative;">
                          <h1>{{$nownews.title}}</h1>
-                         <font>{{$nownews.date}}</font>
+                         <span>{{$nownews.date}}</span>
                          {{foreach $nownews.image as $img}}
                          <img src="{{$urlroot}}{{$img}}" />
-                         <img src="{{$urlroot}}{{$img}}" />
                          {{/foreach}}
-                        <p>
+                        <div style=" display:block;">
                             {{$nownews.text}}
-                        </p> 
-                    </div> 
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
+                        </div> 
+                       </div>
+                    </div>  
                 </div>
                 <div class="colum_list">
                     <div class="about_zpopnew_list">	
@@ -31,8 +31,7 @@
                     </div>
                     <div class="page"><span style="float:left; width:35px;">&nbsp;</span>
                         <a  id="c_down" href="javascript:void(0)">&or;</a><a id="c_up" style="display:none" href="javascript:void(0)">&and;</a>
-                    </div>
-                    <div class="zhegai">&nbsp;<!--用于遮挡竖滚动条--></div> 
+                    </div> 
 				</div>
             </div> 
 		<!-- container END -->

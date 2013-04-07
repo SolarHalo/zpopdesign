@@ -2,7 +2,7 @@
 include '../configs/load.php';
 include BASE_HOME.'includes/XmlLoader.php';
 
-$xml = loadXmlfile("about.xml");
+$xml = loadXmlfile("team.xml");
 
 $imgs = pasreSXml2Array($xml->image->children());
 

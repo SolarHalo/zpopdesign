@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-26 10:54:32
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-27 05:13:31
          compiled from "E:\gisrespository\personal\php\php\zpopdesign\templates\figure.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:295595148675a2714f9-39500370%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ea0468529c5fe4771b6a8030a1bd4c7c05fb1e58' => 
     array (
       0 => 'E:\\gisrespository\\personal\\php\\php\\zpopdesign\\templates\\figure.tpl',
-      1 => 1364295266,
+      1 => 1364360199,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'vip' => 0,
     'normcs' => 0,
     'normc' => 0,
+    'sm' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -40,13 +41,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="colum works-nav"  id="works">
                     	<ul class="works-show_nav">
                         	<li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/logo" <?php if ($_smarty_tpl->tpl_vars['type']->value=="logo"){?> style="color:red;"<?php }?>>标志/VI</a></li>
+figure.php?type=logo" <?php if ($_smarty_tpl->tpl_vars['type']->value=="logo"){?> style="color:red;"<?php }?>>标志/VI</a></li>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/web" <?php if ($_smarty_tpl->tpl_vars['type']->value=="web"){?> style="color:red;"<?php }?>>网站</a></li>
+figure.php?type=web" <?php if ($_smarty_tpl->tpl_vars['type']->value=="web"){?> style="color:red;"<?php }?>>网站</a></li>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/print" <?php if ($_smarty_tpl->tpl_vars['type']->value=="print"){?> style="color:red;"<?php }?>>印刷品</a></li>
+figure.php?type=print" <?php if ($_smarty_tpl->tpl_vars['type']->value=="print"){?> style="color:red;"<?php }?>>印刷品</a></li>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-works/figure/publish" <?php if ($_smarty_tpl->tpl_vars['type']->value=="publish"){?> style="color:red;"<?php }?>>品牌发布</a></li>
+figure.php?type=publish" <?php if ($_smarty_tpl->tpl_vars['type']->value=="publish"){?> style="color:red;"<?php }?>>品牌发布</a></li>
                         </ul> 
                         <div class="works-show slides">
                         <?php  $_smarty_tpl->tpl_vars['img'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['img']->_loop = false;
@@ -82,7 +83,7 @@ $_smarty_tpl->tpl_vars['vip']->_loop = true;
                 <div class="colum_list"> 
                 	<h3 class="works-show_h">案例分析</h3>
                     <div class="works-show_list"> 
-                        <ul>
+                        <ul id="c_content" style="position:relative;">
                         <?php  $_smarty_tpl->tpl_vars['normc'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['normc']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['normcs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['normc']->key => $_smarty_tpl->tpl_vars['normc']->value){
@@ -95,7 +96,7 @@ $_smarty_tpl->tpl_vars['normc']->_loop = true;
                         </ul>
                     </div>
                     <div class="page"><span style="float:left; width:35px;">&nbsp;</span>
-                        <a href="#">&or;</a><a href="#">&and;</a>
+                        <a  id="c_down" href="javascript:void(0)">&or;</a><a id="c_up" style="display:none" href="javascript:void(0)">&and;</a>
                     </div>
                     <div class="zhegai" style="height:530px;">&nbsp;<!--用于遮挡竖滚动条--></div>  
 				</div> 
@@ -120,8 +121,19 @@ js/windowjs.js" type="text/javascript"></script>
             swap: true
           }
       });
+
+      cscroll("#c_up", "#c_down", "#c_content", $(".works-show_list").innerHeight());
     });
+
+    var casetype='<?php echo $_smarty_tpl->tpl_vars['sm']->value;?>
+';
+    var type="<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
+";
+
+    
   </script>
+  
+  
 		
 		
 <?php echo $_smarty_tpl->getSubTemplate ('footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
