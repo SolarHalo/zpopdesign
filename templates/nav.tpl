@@ -13,7 +13,7 @@
                         <a href="{{$urlroot}}service.php" class="{{if $mm == 'service'}}dq{{else}}xz{{/if}}">SERVICES<span class="hr">服务</span></a> 
                     </li> 
                     <li>
-                        <a href="javascript:void(0)" class="{{if $mm == 'works'}}dq{{else}}xz{{/if}}">WORKS<span class="hr">工作</span></a>
+                        <a href="{{$urlroot}}figure.php" class="{{if $mm == 'works'}}dq{{else}}xz{{/if}}">WORKS<span class="hr">工作</span></a>
                         <ul {{if $mm == 'works'}}style="display:block;"{{else}}style="display:none;"{{/if}}>
                             <li><a href="{{$urlroot}}figure.php" class="sub_nav" {{if $sm == 'figure'}}style="color:red;"{{/if}}><span>树形象</span></a></li>
                             <li><a href="{{$urlroot}}culture.php" class="sub_nav" {{if $sm == 'culture'}}style="color:red;"{{/if}}><span>铸人心</span></a></li> 

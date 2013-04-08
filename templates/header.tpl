@@ -19,7 +19,7 @@
 <body>
 	<div id="box">
     	<div class="header">
-        	 <span class="headerlogo"><a href="#"><img src="{{$urlroot}}images/headerlogo.png" width="194" height="37" /></a></span>
+        	 <span class="headerlogo"><a href="{{$urlroot}}"><img src="{{$urlroot}}images/headerlogo.png" width="194" height="37" /></a></span>
              <div class="header_title">
 				<p>做太仓中脱颖之粟</p>
              </div> 
