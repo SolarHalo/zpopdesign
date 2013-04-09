@@ -17,6 +17,12 @@
 </head>
 
 <body>
+
+<div id="backgroudimg" class="slides" style="width:100%; height:100%; left: 0;position: absolute; top: 0;background-color: white;z-index: -10;">
+{{foreach $bgs as $img}}
+    <img src="{{$urlroot}}{{$img}}" width="100%" height="100%"/>
+{{/foreach}}
+</div>
 	<div id="box">
     	<div class="header">
         	 <span class="headerlogo"><a href="#"><img src="{{$urlroot}}images/headerlogo.png" width="194" height="37" /></a></span>
@@ -76,11 +82,7 @@ $(function() {
   });
 </script> 
 
-<div id="backgroudimg" class="slides" style="width:100%; height:100%; left: 0;position: absolute; top: 0;background-color: white;z-index: -10;">
-{{foreach $bgs as $img}}
-    <img src="{{$urlroot}}{{$img}}" width="100%" height="100%"/>
-{{/foreach}}
-</div>
+
 
 <div id="flashbox" style="width:100%; height:100%; left: 0;position: absolute; top: 0;background-color: white;">
 	<div id="box">
