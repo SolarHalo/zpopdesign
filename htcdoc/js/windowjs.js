@@ -41,14 +41,14 @@ function windowShow(hash){
 		'type': 'POST',
 		'data': {'case': casetype,'type':type, 'hash': hash},
 		'success': function(data){
-			$("#cwindow").html(data);
+		//	$("#cwindow").append(data);
+			document.getElementById("cwindow").innerHTML =data;
 			cscroll("#p_up", "#p_down", "#p_content", $("#ttcontent").innerHeight());
 		}
 	})
 }
 
 function closeWindow(){
-	console.log($('body').innerWidth()/2 - 250);
 	$("#cwindow").animate({
 		'width': 500,
 		'height': 200,

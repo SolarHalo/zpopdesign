@@ -5,11 +5,11 @@
 <title>{{$appname}}</title>
 <link href="{{$urlroot}}style/style.css" rel="stylesheet" />
 <link href="{{$urlroot}}style/slidesStyle.css" rel="stylesheet" />
-<script src="{{$urlroot}}js/jquery-1.8.0.min.js"></script>
+<script src="{{$urlroot}}js/jquery-1.8.0.min.js" type="text/javascript"></script>
 <script src="{{$urlroot}}js/menu.js" type="text/javascript"></script>
 <script src="{{$urlroot}}js/jquery.slides.min.js" type="text/javascript"></script>
 
-<style text="text/css">
+<style type="text/css">
 #p_content{ 
     position:relative;
 }

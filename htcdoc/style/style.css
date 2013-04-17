@@ -226,9 +226,8 @@ ul#menu li a.dq .hr{
 	}
 ul#menu li a span{
 	font-weight:normal;
-	vertical-align:top;
-	height:47px;
-	padding-top:3px;
+	vertical-align:text-top;
+	height:51px; 
 	display:inline-block;
 	cursor:pointer;
 	}
@@ -706,6 +705,7 @@ ul#menu li ul li a:hover {
 	margin-top:10px;
 	float:left;
 	font-weight: normal;
+	width: 100%;
 	}
 
 .pageLR{
@@ -744,4 +744,8 @@ ul#menu li ul li a:hover {
 
 div p b{
 	font-weight:normal;
+	}
+#backgroudimg img{
+	width:100%;
+	height:100%;
 	}

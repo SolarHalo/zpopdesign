@@ -9,7 +9,6 @@ $(document).ready(function (){
 		var h2 = $(".right_colum").outerHeight();
 		
 		var swf = $(this).attr("swf");
-		console.log(swf)
 		
 		
 		var div = $("<div id='mapwindow'>" + img + "</div>");

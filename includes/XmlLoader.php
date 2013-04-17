@@ -95,7 +95,8 @@ function parseJoin($node){
 
 function replaceFont($str){
 	$str = preg_replace("/<\/?(?:FONT|SPAN)[^>]*>/","", $str);
-	$str = preg_replace("/<(P*?)[^>]*>\s?<\/P>/","", $str);
+	//$str = preg_replace("/<(P*?)[^>]*>(\s?)<\/P>/","", $str);
+	$str = preg_replace("/<P(\s\S)*>(\s?)<\/P>/","", $str);
 	return $str;
 }
 

@@ -2,7 +2,7 @@
         <div id="smallaythumb" class="smallLay-img">
         	<div id="thumbcontent" style=" position:relative;">
             {{foreach $cimgs as $img}}
-			<img alt="" src="{{$urlroot}}{{$img}}">
+			<img alt="" src="{{$urlroot}}{{$img}}" />
 			{{/foreach}}
 			</div>
         </div>
